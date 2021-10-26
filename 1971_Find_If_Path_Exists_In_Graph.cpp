@@ -50,4 +50,40 @@ public:
         DFS(adj_list, visited, start, end, path_exists);
         return path_exists;
     }
+
+
+    bool validPathBFS(int n, vector<vector<int>>& edges, int start, int end) {
+        
+        /* Form Adjacency Matrix */
+        unordered_map<int,vector<int>> adj_list;
+        for(auto edge: edges){
+             adj_list[edge[0]].push_back(edge[1]);
+             adj_list[edge[1]].push_back(edge[0]);
+
+        }
+        
+        /* Breadth First Search Approach */
+        deque<int> BFS_queue;
+        BFS_queue.push_back(start);
+        vector<bool> visited(n, false);
+        
+        while(!BFS_queue.empty()){
+            int curr_loc = BFS_queue.front();
+            BFS_queue.pop_front();
+            if(curr_loc == end){
+                return true;
+            }
+
+            visited[curr_loc] = true;
+            for(auto new_loc:adj_list[curr_loc]){
+                if(!visited[new_loc]){
+                    BFS_queue.push_back(new_loc);
+                }
+                
+            }
+            
+        }
+        
+        return false;
+    }
 };

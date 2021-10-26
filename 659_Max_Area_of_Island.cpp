@@ -56,17 +56,16 @@ public:
     
     int maxAreaOfIsland(vector<vector<int>>& grid) {
         int max_size = 0;
-        for(int col = 0; col < grid.size(); col++){
-            for(int row = 0; row < grid[0].size(); row++){
-                if(grid[col][row] == 1){
+        for(int row = 0; row < grid.size(); row++){
+            for(int col = 0; col < grid[0].size(); col++){
+                if(grid[row][col] == 1){
                     int size = 0;
-                    getSizeOfIsland(grid, size, Coordinate{col, row});
+                    getSizeOfIsland(grid, size, Coordinate{row, col});
                     max_size = size > max_size ? size : max_size;
+                
                 }
-            
             }
         }
-        
         return max_size;
     }
 };
