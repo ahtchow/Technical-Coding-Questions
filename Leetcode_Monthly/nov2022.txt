@@ -2,3 +2,6 @@
 2 - 62. Unique Paths, Unique Paths II
 3 - 129. Sum Root to Leaf Numbers
 4 - 404. Sum of Left Leaves
+5 - 441. Arranging Coins
+6 - Single Number III (Was Hard, Bit Masking to find Single Number in Array, Try SN1, SN2)
+7 - 43. Multiply Strings
