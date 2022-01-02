@@ -5,3 +5,5 @@
 5 - 441. Arranging Coins
 6 - Single Number III (Was Hard, Bit Masking to find Single Number in Array, Try SN1, SN2)
 7 - 43. Multiply Strings
+8 - 96. Unique Binary Search Trees.
+8 - 122. Best Time to Buy and Sell Stocks II
