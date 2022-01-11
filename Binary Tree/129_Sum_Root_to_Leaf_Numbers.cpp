@@ -34,6 +34,27 @@ public:
         return;
         
     }
+
+    int sumRootToLeafStack(TreeNode* root) {
+        stack<pair<TreeNode*,int>> stk;
+        int ans = 0;
+        stk.emplace(root, root->val);
+        while(!stk.empty()){
+            pair<TreeNode*,int> tmp = stk.top();
+            stk.pop();
+            if(tmp.first->left){
+                stk.emplace(tmp.first->left,tmp.second * 2+ tmp.first->left->val);
+            }
+            if(tmp.first->right){
+                stk.emplace(tmp.first->right,tmp.second * 2+ tmp.first->right->val);
+            }
+            if(!tmp.first->left && ! tmp.first->right){
+                ans += tmp.second;
+            }
+            
+        }
+        return ans;
+    }
     
     int sumNumbers(TreeNode* root) {
         int total_sum = 0;
