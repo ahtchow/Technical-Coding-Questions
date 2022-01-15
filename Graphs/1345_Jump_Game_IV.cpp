@@ -74,7 +74,7 @@ public:
                 }
             } 
             
-            
+            adj_list[cur_val].clear();
         }
 
         return -1;
